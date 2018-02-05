@@ -1,0 +1,16 @@
+{
+  "name": "bloks",
+  "version": "0.0.1",
+  "description": "a theme for subreddits",
+  "main": "index.js",
+  "repository": "https://github.com/12px/bloks.git",
+  "author": "12px <dalton@12px.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-less": "^3.4.0"
+  }
+}
