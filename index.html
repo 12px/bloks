@@ -9,12 +9,62 @@
 
     <link rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/litera/bootstrap.min.css">
+    <link rel="stylesheet" href="./engine/bloks.css">
   </head>
 
   <body>
+    <div id="preload" class="bg-primary text-white text-center">
+      <h1>.bloks engine.</h1>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+      </div>
+    </div>
 
-    <div id="bloks">
-      
+    <div class="container">
+      <div class="row" id="bloks">
+
+        <!-- Sidebar -->
+        <div class="col-12 col-sm-4 col-md-3 col-lg-3 pt-2">
+
+          <!-- Navigation -->
+          <div class="nav nav-pills flex-column" id="tabList" role="tablist">
+            <tab-link to="welcomeTab" class="active">Welcome</tab-link>
+            <tab-link to="colorTab">Colors</tab-link>
+            <tab-link to="headerTab">Header</tab-link>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-12 col-sm-8 col-md-9 col-lg-10 tab-content" id="tabContent">
+
+          <tab name="welcomeTab" class="show active">
+            <h1>bloks: engine.</h1>
+
+            <p><strong><a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a></strong> is a subreddit theme built for the new 2018 reddit redesign. It's built to be <strong>customizeable</strong> and <strong>modular</strong>, to allow you to set it up in any configuration you like.</p>
+
+            <p>You can use the navigation links to pinpoint exactly what you want to change, or you can use the buttons at the bottom of every page to see all of what this theme has to offer.</p>
+
+            <p>If you run have any questions be sure to reach out via <a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a> and I'd be happy to help.</p>
+
+            <p>If you run into any bugs or issues, you can reach out on <a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a> or you can <a href="https://github.com/12px/bloks/issues" target="_blank">open an issue on github</a>.</p>
+
+            <div class="text-center pt-3">
+              <tab-button to="colorTab">Get Started With Colors</tab-button>
+            </div>
+          </tab>
+
+          <tab name="colorTab">
+            <h1>bloks: colors.</h1>
+            <tab-button to="headerTab" align="right">Next Step: Header</tab-button>
+          </tab>
+
+          <tab name="headerTab">
+            <h1>bloks: header</h1>
+          </tab>
+
+        </div>
+
+      </div>
     </div>
 
     <!-- Vendor Scripts -->
@@ -25,6 +75,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js">
       </script>
     <script src="./node_modules/less/dist/less.min.js"></script>
+
+    <!-- Vue Templates -->
+    <script src="./engine/vue/routing.js"></script>
+
+    <!-- User Files -->
+    <script src="./engine/bloks.js"></script>
   </body>
 
 </html>

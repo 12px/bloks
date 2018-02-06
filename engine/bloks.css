@@ -1,0 +1,22 @@
+/* bloks engine styles */
+
+#bloks { padding: 48px 0; }
+
+#preload {
+  z-index: 100;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  padding-top: calc(50vh - 40px)
+}
+
+#preload .progress {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#tabContent h1 { padding-bottom: 12px; }
+
+p {
+  max-width: 35rem;
+  font-family: inherit;
+}
