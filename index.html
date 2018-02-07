@@ -9,7 +9,7 @@
 
     <link rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/litera/bootstrap.min.css">
-    <link rel="stylesheet" href="./engine/bloks.css">
+    <link rel="stylesheet" href="./engine/bloks.css?v=v0.0.1">
   </head>
 
   <body>
@@ -29,6 +29,7 @@
             <a href="#" class="btn btn-sm btn-outline-info">Export</a>
           </div>
           <a href="#" class="btn btn-sm btn-success mt-1 mr-auto">Compile</a>
+          <span class="badge bg-white text-secondary mt-1"><strong>v0.0.1</strong></span>
         </div>
       </header>
 
@@ -40,8 +41,8 @@
 
           <!-- Navigation -->
           <div class="nav nav-pills flex-column" id="tabList" role="tablist">
-            <tab-link to="welcomeTab" class="active">Welcome</tab-link>
-            <tab-link to="colorTab">Colors</tab-link>
+            <tab-link to="welcomeTab">Welcome</tab-link>
+            <tab-link to="colorTab" class="active">Colors</tab-link>
             <tab-link to="headerTab">Header</tab-link>
             <tab-link to="contentTab">Content</tab-link>
             <tab-link to="sidebarTab">Sidebar</tab-link>
@@ -52,7 +53,7 @@
         <!-- Content -->
         <div class="col-12 col-sm-8 col-md-9 col-lg-10 tab-content" id="tabContent">
 
-          <tab name="welcomeTab" class="show active">
+          <tab name="welcomeTab">
             <h1>bloks: engine.</h1>
 
             <p><strong><a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a></strong> is a subreddit theme built for the new 2018 reddit redesign. It's built to be <strong>customizeable</strong> and <strong>modular</strong>, to allow you to set it up in any configuration you like.</p>
@@ -68,7 +69,7 @@
             </p>
           </tab>
 
-          <tab name="colorTab">
+          <tab name="colorTab" class="show active">
             <h1>bloks: colors.</h1>
             <tab-button to="headerTab">Next Step: Header</tab-button>
           </tab>
@@ -109,12 +110,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js">
       </script>
     <script src="./node_modules/less/dist/less.min.js"></script>
+    <script src="./engine/less.js?v=v0.0.1"></script>
 
     <!-- Vue Templates -->
-    <script src="./engine/vue/routing.js"></script>
+    <script src="./engine/vue/routing.js?v=v0.0.1"></script>
+    <script src="./engine/vue/options.js?v=v0.0.1"></script>
 
     <!-- User Files -->
-    <script src="./engine/bloks.js"></script>
+    <script src="./engine/bloks.js?v=v0.0.1"></script>
   </body>
 
 </html>
