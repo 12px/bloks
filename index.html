@@ -20,17 +20,32 @@
       </div>
     </div>
 
+    <header class="navbar navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#"><strong>bloks</strong></a>
+
+          <div class="btn-group mt-1 ml-3 mr-2">
+            <a href="#" class="btn btn-sm btn-outline-info">Import</a>
+            <a href="#" class="btn btn-sm btn-outline-info">Export</a>
+          </div>
+          <a href="#" class="btn btn-sm btn-success mt-1 mr-auto">Compile</a>
+        </div>
+      </header>
+
     <div class="container">
       <div class="row" id="bloks">
 
         <!-- Sidebar -->
-        <div class="col-12 col-sm-4 col-md-3 col-lg-3 pt-2">
+        <div class="col-12 col-sm-4 col-md-3 col-lg-2 pt-2 pt-lg-4">
 
           <!-- Navigation -->
           <div class="nav nav-pills flex-column" id="tabList" role="tablist">
             <tab-link to="welcomeTab" class="active">Welcome</tab-link>
             <tab-link to="colorTab">Colors</tab-link>
             <tab-link to="headerTab">Header</tab-link>
+            <tab-link to="contentTab">Content</tab-link>
+            <tab-link to="sidebarTab">Sidebar</tab-link>
+            <tab-link to="compileTab">Compile</tab-link>
           </div>
         </div>
 
@@ -48,18 +63,37 @@
 
             <p>If you run into any bugs or issues, you can reach out on <a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a> or you can <a href="https://github.com/12px/bloks/issues" target="_blank">open an issue on github</a>.</p>
 
-            <div class="text-center pt-3">
+            <p class="text-center pt-3">
               <tab-button to="colorTab">Get Started With Colors</tab-button>
-            </div>
+            </p>
           </tab>
 
           <tab name="colorTab">
             <h1>bloks: colors.</h1>
-            <tab-button to="headerTab" align="right">Next Step: Header</tab-button>
+            <tab-button to="headerTab">Next Step: Header</tab-button>
           </tab>
 
           <tab name="headerTab">
-            <h1>bloks: header</h1>
+            <h1>bloks: header.</h1>
+            <tab-button to="colorTab">Previous Step: Colors</tab-button>
+            <tab-button to="contentTab">Next Step: Content</tab-button>
+          </tab>
+
+          <tab name="contentTab">
+            <h1>bloks: content.</h1>
+            <tab-button to="headerTab">Previous Step: Header</tab-button>
+            <tab-button to="sidebarTab">Next Step: Sidebar</tab-button>
+          </tab>
+
+          <tab name="sidebarTab">
+            <h1>bloks: sidebar.</h1>
+            <tab-button to="contentTab">Previous Step: Content</tab-button>
+            <tab-button to="compileTab">Next Step: Compile</tab-button>
+          </tab>
+
+          <tab name="compileTab">
+            <h1>bloks: compile</h1>
+            <tab-button to="sidebarTab">Previous Step: Sidebar</tab-button>
           </tab>
 
         </div>

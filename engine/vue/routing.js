@@ -15,7 +15,7 @@ Vue.component('tab-link', {
 
 // Page Buttons For Use Anywhere
 Vue.component('tab-button', {
-  props: ['to', 'align'],
+  props: ['to'],
   methods: { tab: function(tab) { $('#'+tab+'Link').tab('show'); } },
-  template: `<a href="#" @click="tab(to)" :class="{ 'btn btn-primary mt-3': 1, 'float-left': align == 'left', 'float-right': align == 'right' }"><slot></slot></a>`
+  template: `<a href="#" @click="tab(to)" class="btn mr-3 btn-outline-primary mt-3"><slot></slot></a>`
 });

@@ -1,12 +1,12 @@
 /* bloks engine styles */
 
-#bloks { padding: 48px 0; }
+#bloks { padding: 36px 0; }
 
 #preload {
   z-index: 100;
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
-  padding-top: calc(50vh - 40px)
+  padding-top: calc(33vh - 40px)
 }
 
 #preload .progress {
