@@ -9,7 +9,13 @@ var vm = new Vue({
     // less configs
     c_background:  '#ffffff',
     c_text_base:   '#191a23',
-    c_link:        '#4481ec'
+    c_link:        '#4481ec',
+    c_upvote:      '#f33336',
+    c_downvote:    '#0071c5',
+    c_thumbnail:   '#f1f1f1',
+    c_nsfw:        '#d86a62',
+    c_locked:      '#ead340',
+    c_stickied:    '#399b76'
   },
 
   computed: {
@@ -50,9 +56,9 @@ var vm = new Vue({
           color: this.c_text_base,
           backgroundColor: this.c_background
         },
-        subtle: {
-          color: this.c_text_subtle
-        }
+        link: { color: this.c_link },
+        link_visited: { color: this.c_link_visited },
+        subtle: { color: this.c_text_subtle },
       }
     }
   },
