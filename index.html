@@ -42,8 +42,8 @@
           <!-- Navigation -->
           <div class="nav nav-pills flex-column" id="tabList" role="tablist">
             <tab-link to="welcomeTab">Welcome</tab-link>
-            <tab-link to="colorTab" class="active">Colors</tab-link>
-            <tab-link to="headerTab">Header</tab-link>
+            <tab-link to="colorTab">Colors</tab-link>
+            <tab-link to="headerTab" class="active">Header</tab-link>
             <tab-link to="contentTab">Content</tab-link>
             <tab-link to="sidebarTab">Sidebar</tab-link>
             <tab-link to="compileTab">Compile</tab-link>
@@ -69,7 +69,7 @@
             </p>
           </tab>
 
-          <tab name="colorTab" class="show active">
+          <tab name="colorTab">
 
             <config title="General Colors">
               <color v-model="c_background">Background</color>
@@ -97,8 +97,13 @@
             <tab-button to="headerTab">Next Step: Header</tab-button>
           </tab>
 
-          <tab name="headerTab">
-            <h1>bloks: header.</h1>
+          <tab name="headerTab" class="show active">
+            <config title="Navbar Options">
+              <toggle label="Static Navbar" v-model="o_static_header">
+                Disables the fixed navbar.
+              </toggle>
+            </config>
+
             <tab-button to="colorTab">Previous Step: Colors</tab-button>
             <tab-button to="contentTab">Next Step: Content</tab-button>
           </tab>

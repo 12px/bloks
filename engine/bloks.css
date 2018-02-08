@@ -43,6 +43,9 @@ p {
   border-bottom-right-radius: 0.25rem;
 }
 .conf .cfg { margin: 12px 0; }
+.conf .toggle {
+  width: 65px; 
+}
 
 .preview .content { padding: 12px; }
 .preview .link .post,

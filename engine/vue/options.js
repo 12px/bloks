@@ -27,3 +27,16 @@ Vue.component('color', {
     <div class="label text-center text-secondary pt-1"><slot></slot></div>
   </div>`
 });
+
+// toggle option
+Vue.component('toggle', {
+  props: ['value', 'label'], methods: { newVal },
+  template: `<div class="col-12 mb-3 cfg">
+    <span @click="newVal(!value)" :class="{ 'toggle btn btn-sm mr-3': 1, 'btn-success': value, 'btn-danger': !value }">
+      <span v-if="value">ON</span>
+      <span v-if="!value">OFF</span>
+    </span>
+    <span class="label mr-4">{{ label }}</span>
+    <span class="label text-secondary"><slot></slot></span>
+  </div>`
+});

@@ -7,18 +7,19 @@ var vm = new Vue({
 
   data: {
     // less configs
-    c_background:  '#ffffff',
-    c_foreground:  '#ffffff',
-    c_text_base:   '#191a23',
-    c_link:        '#4481ec',
-    c_upvote:      '#f33336',
-    c_downvote:    '#0071c5',
-    c_thumbnail:   '#f1f1f1',
-    c_nsfw:        '#d86a62',
-    c_locked:      '#ead340',
-    c_stickied:    '#399b76',
-    w_thumbnail:   '65px',
-    h_thumbnail:   '45px'
+    c_background:     '#ffffff',
+    c_foreground:     '#ffffff',
+    c_text_base:      '#191a23',
+    c_link:           '#4481ec',
+    c_upvote:         '#f33336',
+    c_downvote:       '#0071c5',
+    c_thumbnail:      '#f1f1f1',
+    c_nsfw:           '#d86a62',
+    c_locked:         '#ead340',
+    c_stickied:       '#399b76',
+    o_static_header:  true,
+    w_thumbnail:      '65px',
+    h_thumbnail:      '45px'
   },
 
   computed: {
