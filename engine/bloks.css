@@ -28,13 +28,13 @@ p {
 }
 .conf input[type=color] {
   padding: 0;
-  width: 65px;
-  height: 43px;
+  width: 60px;
+  height: 32px;
   outline: none;
   cursor: pointer;
   border-color: rgba(0,0,0,0.1);
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 .conf input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
 .conf input[type="color"]::-webkit-color-swatch {

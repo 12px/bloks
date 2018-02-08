@@ -2,16 +2,18 @@
 
 // Dark Palette
 .palette() when (lightness(@c-background) < 50%) {
-  @c-shadow:       lighten(@c-background, 5%);
-  @c-border:       lighten(@c-background, 8%);
-  @c-text-subtle:  mix(@c-text-base, @c-background, 60%);
+  @c-shadow:        lighten(@c-background, 5%);
+  @c-border:        lighten(@c-background, 8%);
+  @c-link-visited:  mix(@c-link, @c-background, 60%);
+  @c-text-subtle:   mix(@c-text-base, @c-background, 60%);
 }
 
 // Light Palette
 .palette() when (lightness(@c-background) >= 50%) {
-  @c-shadow:       darken(@c-background, 5%);
-  @c-border:       darken(@c-background, 8%);
-  @c-text-subtle:  mix(@c-text-base, @c-background, 40%);
+  @c-shadow:        darken(@c-background, 5%);
+  @c-border:        darken(@c-background, 8%);
+  @c-link-visited:  mix(@c-link, @c-background, 40%);
+  @c-text-subtle:   mix(@c-text-base, @c-background, 40%);
 }
 
 // Execute Palette

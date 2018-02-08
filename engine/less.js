@@ -16,7 +16,7 @@ var LessMethods = {
   },
 
   mix: function(color1, color2, wt) {
-    var data = Less.mix( _c(color1) ,  _c(color2) , wt);
+    var data = Less.mix( _c(color1) ,  _c(color2) , { value: wt });
     return data.toRGB();
   },
 
