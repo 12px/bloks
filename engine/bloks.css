@@ -42,3 +42,16 @@ p {
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
 }
+.conf .cfg { margin: 12px 0; }
+
+.preview .content { padding: 12px; }
+.preview .link .post,
+.preview .link .votes,
+.preview .link .thumbnail {
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.preview .link .score { margin: -5px 0; }
+.preview .link .votes,
+.preview .link .subtitle { font-size: 0.8em; }

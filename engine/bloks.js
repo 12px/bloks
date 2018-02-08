@@ -8,6 +8,7 @@ var vm = new Vue({
   data: {
     // less configs
     c_background:  '#ffffff',
+    c_foreground:  '#ffffff',
     c_text_base:   '#191a23',
     c_link:        '#4481ec',
     c_upvote:      '#f33336',
@@ -15,7 +16,9 @@ var vm = new Vue({
     c_thumbnail:   '#f1f1f1',
     c_nsfw:        '#d86a62',
     c_locked:      '#ead340',
-    c_stickied:    '#399b76'
+    c_stickied:    '#399b76',
+    w_thumbnail:   '65px',
+    h_thumbnail:   '45px'
   },
 
   computed: {
@@ -49,21 +52,12 @@ var vm = new Vue({
       }
     },
 
-    // css output for live preview
-    css: function() {
-      return {
-        preview: {
-          color: this.c_text_base,
-          backgroundColor: this.c_background
-        },
-        link: { color: this.c_link },
-        link_visited: { color: this.c_link_visited },
-        subtle: { color: this.c_text_subtle },
-      }
-    }
+    // engine/vue/preview.js
+    css: previewStyles
   },
 
   methods: {
+    // engine/less.js
     mix : LessMethods.mix,
     lightness: LessMethods.lightness,
     lighten: LessMethods.lighten,

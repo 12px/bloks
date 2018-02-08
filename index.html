@@ -71,12 +71,28 @@
 
           <tab name="colorTab" class="show active">
 
-            <div class="conf row">
-              <h5 class="col-12 my-3">General Colors</h5>
+            <config title="General Colors">
               <color v-model="c_background">Background</color>
+              <color v-model="c_foreground">Foreground</color>
               <color v-model="c_text_base">Text</color>
               <color v-model="c_link">Link</color>
-            </div>
+            </config>
+
+            <preview :css="css">
+              <preview-link :css="css" type="stickied"></preview-link>
+              <preview-link :css="css"></preview-link>
+              <preview-link :css="css" type="locked"></preview-link>
+              <preview-link :css="css" type="nsfw"></preview-link>
+            </preview>
+
+            <config title="UI Colors">
+              <color v-model="c_thumbnail">Thumbnail</color>
+              <color v-model="c_upvote">Upvote</color>
+              <color v-model="c_downvote">Downvote</color>
+              <color v-model="c_nsfw">NSFW</color>
+              <color v-model="c_locked">Locked</color>
+              <color v-model="c_stickied">Stickied</color>
+            </config>
 
             <tab-button to="headerTab">Next Step: Header</tab-button>
           </tab>
@@ -122,6 +138,7 @@
     <!-- Vue Templates -->
     <script src="./engine/vue/routing.js?v=v0.0.1"></script>
     <script src="./engine/vue/options.js?v=v0.0.1"></script>
+    <script src="./engine/vue/preview.js?v=v0.0.1"></script>
 
     <!-- User Files -->
     <script src="./engine/bloks.js?v=v0.0.1"></script>

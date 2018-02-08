@@ -3,6 +3,17 @@
 // value change emitter for v-model
 var newVal = function(val) { this.$emit('input', val); };
 
+// option wrapper
+Vue.component('config', {
+  props: ['title'],
+  template: `<div class="conf card bg-light mb-3">
+    <div class="card-header">{{ title }}</div>
+    <div class="card-body row">
+      <slot></slot>
+    </div>
+  </div>`
+})
+
 // color option
 Vue.component('color', {
   props: ['value'], methods: { newVal },
