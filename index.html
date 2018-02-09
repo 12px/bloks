@@ -99,8 +99,11 @@
 
           <tab name="headerTab" class="show active">
             <config title="Navbar Options">
-              <toggle label="Static Navbar" v-model="o_static_header">
+              <toggle label="Static Navbar" v-model="o_static_nav">
                 Disables the fixed navbar.
+              </toggle>
+              <toggle label="Use Tabs" v-model="o_use_tabs">
+                Brings back the tabs for hot / new / top.
               </toggle>
             </config>
 
@@ -109,7 +112,17 @@
           </tab>
 
           <tab name="contentTab">
-            <h1>bloks: content.</h1>
+            <config title="Page Options">
+              <toggle label="Remove Margin" v-model="o_no_margin">
+                Disables the page margin around content/sidebar.
+              </toggle>
+            </config>
+            <config title="Content Options">
+              <toggle label="Show NSFW" v-model="o_no_margin">
+                Doesn't obscure thumbnails on NSFW posts.
+              </toggle>
+            </config>
+
             <tab-button to="headerTab">Previous Step: Header</tab-button>
             <tab-button to="sidebarTab">Next Step: Sidebar</tab-button>
           </tab>

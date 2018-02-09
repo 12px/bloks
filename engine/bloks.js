@@ -17,9 +17,12 @@ var vm = new Vue({
     c_nsfw:           '#d86a62',
     c_locked:         '#ead340',
     c_stickied:       '#399b76',
-    o_static_header:  true,
+    o_static_nav:     true,
+    o_use_tabs:       true,
     w_thumbnail:      '65px',
-    h_thumbnail:      '45px'
+    h_thumbnail:      '45px',
+    o_show_nsfw:      false,
+    o_no_margin:      true,
   },
 
   computed: {
