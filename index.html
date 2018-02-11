@@ -134,7 +134,15 @@
           </tab>
 
           <tab name="sidebarTab">
-            <h1>bloks: sidebar.</h1>
+            <config title="Sidebar Options">
+              <toggle label="Sidebar Image" v-model="o_side_image">
+                Show an image at the top of the sidebar.
+              </toggle>
+              <string v-model="w_sidebar">Sidebar Width</string>
+              <string v-model="t_subscribers">Subscribers Text</string>
+              <string v-model="t_online">Online Text</string>
+            </config>
+
             <tab-button to="contentTab">Previous Step: Content</tab-button>
             <tab-button to="compileTab">Next Step: Compile</tab-button>
           </tab>

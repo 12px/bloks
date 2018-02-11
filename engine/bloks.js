@@ -19,10 +19,14 @@ var vm = new Vue({
     c_stickied:       '#399b76',
     o_static_nav:     true,
     o_use_tabs:       true,
+    o_no_margin:      true,
     w_thumbnail:      '65px',
     h_thumbnail:      '45px',
     o_show_nsfw:      false,
-    o_no_margin:      true,
+    w_sidebar:        '300px',
+    o_side_image:     true,
+    t_subscribers:    'Subscribers',
+    t_online:         'Online'
   },
 
   computed: {
