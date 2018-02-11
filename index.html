@@ -41,11 +41,11 @@
 
           <!-- Navigation -->
           <div class="nav nav-pills flex-column" id="stepList" role="tablist">
-            <step-link to="welcomeStep">Welcome</step-link>
-            <step-link to="colorStep">Colors</step-link>
-            <step-link to="headerStep" class="active">Header</step-link>
+            <step-link to="welcomeStep" class="active">Welcome</step-link>
+            <step-link to="headerStep">Header</step-link>
             <step-link to="contentStep">Content</step-link>
             <step-link to="sidebarStep">Sidebar</step-link>
+            <step-link to="colorStep">Colors</step-link>
             <step-link to="compileStep">Compile</step-link>
           </div>
         </div>
@@ -55,7 +55,7 @@
 
           <!-- Configuration Tab -->
           <div class="tab-content" id="stepContent">
-            <step name="welcomeStep">
+            <step name="welcomeStep" class="show active">
               <h1>bloks: engine.</h1>
 
               <p><strong><a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a></strong> is a subreddit theme built for the new 2018 reddit redesign. It's built to be <strong>customizeable</strong> and <strong>modular</strong>, to allow you to set it up in any configuration you like.</p>
@@ -67,39 +67,11 @@
               <p>If you run into any bugs or issues, you can reach out on <a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a> or you can <a href="https://github.com/12px/bloks/issues" target="_blank">open an issue on github</a>.</p>
 
               <p class="text-center pt-3">
-                <step-button to="colorStep">Get Started With Colors</step-button>
+                <step-button to="headerStep">Get Started!</step-button>
               </p>
             </step>
 
-            <step name="colorStep">
-
-              <config title="General Colors">
-                <color v-model="c_background">Background</color>
-                <color v-model="c_foreground">Foreground</color>
-                <color v-model="c_text_base">Text</color>
-                <color v-model="c_link">Link</color>
-              </config>
-
-              <preview :css="css">
-                <preview-link :css="css" type="stickied"></preview-link>
-                <preview-link :css="css"></preview-link>
-                <preview-link :css="css" type="locked"></preview-link>
-                <preview-link :css="css" type="nsfw"></preview-link>
-              </preview>
-
-              <config title="UI Colors">
-                <color v-model="c_thumbnail">Thumbnail</color>
-                <color v-model="c_upvote">Upvote</color>
-                <color v-model="c_downvote">Downvote</color>
-                <color v-model="c_nsfw">NSFW</color>
-                <color v-model="c_locked">Locked</color>
-                <color v-model="c_stickied">Stickied</color>
-              </config>
-
-              <step-button to="headerStep">Next Step: Header</step-button>
-            </step>
-
-            <step name="headerStep" class="show active">
+            <step name="headerStep">
               <config title="Navbar Options">
                 <toggle label="Static Navbar" v-model="o_static_nav">
                   Disables the fixed navbar.
@@ -109,7 +81,6 @@
                 </toggle>
               </config>
 
-              <step-button to="colorStep">Previous Step: Colors</step-button>
               <step-button to="contentStep">Next Step: Content</step-button>
             </step>
 
@@ -146,6 +117,34 @@
               </config>
 
               <step-button to="contentStep">Previous Step: Content</step-button>
+              <step-button to="colorStep">Next Step: Colors</step-button>
+            </step>
+
+            <step name="colorStep">
+              <config title="General Colors">
+                <color v-model="c_background">Background</color>
+                <color v-model="c_foreground">Foreground</color>
+                <color v-model="c_text_base">Text</color>
+                <color v-model="c_link">Link</color>
+              </config>
+
+              <preview :css="css">
+                <preview-link :css="css" type="stickied"></preview-link>
+                <preview-link :css="css"></preview-link>
+                <preview-link :css="css" type="locked"></preview-link>
+                <preview-link :css="css" type="nsfw"></preview-link>
+              </preview>
+
+              <config title="UI Colors">
+                <color v-model="c_thumbnail">Thumbnail</color>
+                <color v-model="c_upvote">Upvote</color>
+                <color v-model="c_downvote">Downvote</color>
+                <color v-model="c_nsfw">NSFW</color>
+                <color v-model="c_locked">Locked</color>
+                <color v-model="c_stickied">Stickied</color>
+              </config>
+
+              <step-button to="sidebarStep">Preview Step: Sidebar</step-button>
               <step-button to="compileStep">Next Step: Compile</step-button>
             </step>
 
