@@ -118,6 +118,12 @@
               </toggle>
             </config>
             <config title="Content Options">
+              <string v-model="w_thumbnail">Thumbnail Width</string>
+              <string v-model="h_thumbnail">Thumbnail Height</string>
+              <div class="preview col-12 col-lg-3">
+                <div :style="[css.thumb.nail, css.thumb.link]"></div>
+                <small class="text-secondary">thumbnail</small>
+              </div>
               <toggle label="Show NSFW" v-model="o_no_margin">
                 Doesn't obscure thumbnails on NSFW posts.
               </toggle>

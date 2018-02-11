@@ -35,7 +35,7 @@ Vue.component('preview-link', {
       </div>
     </div>
   </div>`
-})
+});
 
 // preview styles
 var previewStyles = function() {

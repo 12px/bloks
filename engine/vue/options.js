@@ -40,3 +40,15 @@ Vue.component('toggle', {
     <span class="label text-secondary"><slot></slot></span>
   </div>`
 });
+
+// string option
+Vue.component('string', {
+  props: ['value'], methods: { newVal },
+  template: `<div class="col-12 col-md-6 col-lg-3 mb-3 cfg">
+    <div class="input-group">
+      <input type="text" class="form-control form-control-sm"
+        :value="value" @input="newVal($event.target.value)">
+    </div>
+    <label class="label text-secondary"><slot></slot></label>
+  </div>`
+});
