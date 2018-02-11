@@ -46,6 +46,7 @@
             <step-link to="contentStep">Content</step-link>
             <step-link to="sidebarStep">Sidebar</step-link>
             <step-link to="colorStep">Colors</step-link>
+            <step-link to="previewStep">Preview</step-link>
             <step-link to="compileStep">Compile</step-link>
           </div>
         </div>
@@ -145,12 +146,19 @@
               </config>
 
               <step-button to="sidebarStep">Preview Step: Sidebar</step-button>
+              <step-button to="previewStep">Next Step: Preview</step-button>
+            </step>
+
+            <step name="previewStep">
+              <h1>bloks: preview</h1>
+              <step-button to="colorStep">Previous Step: Colors</step-button>
               <step-button to="compileStep">Next Step: Compile</step-button>
+            </step>
             </step>
 
             <step name="compileStep">
               <h1>bloks: compile</h1>
-              <step-button to="sidebarStep">Previous Step: Sidebar</step-button>
+              <step-button to="previewStep">Previous Step: Preivew</step-button>
             </step>
           </div>
 
