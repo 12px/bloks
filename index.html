@@ -40,117 +40,120 @@
         <div class="col-12 col-sm-4 col-md-3 col-lg-2 pt-2 pt-lg-4">
 
           <!-- Navigation -->
-          <div class="nav nav-pills flex-column" id="tabList" role="tablist">
-            <tab-link to="welcomeTab">Welcome</tab-link>
-            <tab-link to="colorTab">Colors</tab-link>
-            <tab-link to="headerTab" class="active">Header</tab-link>
-            <tab-link to="contentTab">Content</tab-link>
-            <tab-link to="sidebarTab">Sidebar</tab-link>
-            <tab-link to="compileTab">Compile</tab-link>
+          <div class="nav nav-pills flex-column" id="stepList" role="tablist">
+            <step-link to="welcomeStep">Welcome</step-link>
+            <step-link to="colorStep">Colors</step-link>
+            <step-link to="headerStep" class="active">Header</step-link>
+            <step-link to="contentStep">Content</step-link>
+            <step-link to="sidebarStep">Sidebar</step-link>
+            <step-link to="compileStep">Compile</step-link>
           </div>
         </div>
 
         <!-- Content -->
-        <div class="col-12 col-sm-8 col-md-9 col-lg-10 tab-content" id="tabContent">
+        <div class="col-12 col-sm-8 col-md-9 col-lg-10">
 
-          <tab name="welcomeTab">
-            <h1>bloks: engine.</h1>
+          <!-- Configuration Tab -->
+          <div class="tab-content" id="stepContent">
+            <step name="welcomeStep">
+              <h1>bloks: engine.</h1>
 
-            <p><strong><a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a></strong> is a subreddit theme built for the new 2018 reddit redesign. It's built to be <strong>customizeable</strong> and <strong>modular</strong>, to allow you to set it up in any configuration you like.</p>
+              <p><strong><a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a></strong> is a subreddit theme built for the new 2018 reddit redesign. It's built to be <strong>customizeable</strong> and <strong>modular</strong>, to allow you to set it up in any configuration you like.</p>
 
-            <p>You can use the navigation links to pinpoint exactly what you want to change, or you can use the buttons at the bottom of every page to see all of what this theme has to offer.</p>
+              <p>You can use the navigation links to pinpoint exactly what you want to change, or you can use the buttons at the bottom of every page to see all of what this theme has to offer.</p>
 
-            <p>If you run have any questions be sure to reach out via <a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a> and I'd be happy to help.</p>
+              <p>If you run have any questions be sure to reach out via <a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a> and I'd be happy to help.</p>
 
-            <p>If you run into any bugs or issues, you can reach out on <a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a> or you can <a href="https://github.com/12px/bloks/issues" target="_blank">open an issue on github</a>.</p>
+              <p>If you run into any bugs or issues, you can reach out on <a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a> or you can <a href="https://github.com/12px/bloks/issues" target="_blank">open an issue on github</a>.</p>
 
-            <p class="text-center pt-3">
-              <tab-button to="colorTab">Get Started With Colors</tab-button>
-            </p>
-          </tab>
+              <p class="text-center pt-3">
+                <step-button to="colorStep">Get Started With Colors</step-button>
+              </p>
+            </step>
 
-          <tab name="colorTab">
+            <step name="colorStep">
 
-            <config title="General Colors">
-              <color v-model="c_background">Background</color>
-              <color v-model="c_foreground">Foreground</color>
-              <color v-model="c_text_base">Text</color>
-              <color v-model="c_link">Link</color>
-            </config>
+              <config title="General Colors">
+                <color v-model="c_background">Background</color>
+                <color v-model="c_foreground">Foreground</color>
+                <color v-model="c_text_base">Text</color>
+                <color v-model="c_link">Link</color>
+              </config>
 
-            <preview :css="css">
-              <preview-link :css="css" type="stickied"></preview-link>
-              <preview-link :css="css"></preview-link>
-              <preview-link :css="css" type="locked"></preview-link>
-              <preview-link :css="css" type="nsfw"></preview-link>
-            </preview>
+              <preview :css="css">
+                <preview-link :css="css" type="stickied"></preview-link>
+                <preview-link :css="css"></preview-link>
+                <preview-link :css="css" type="locked"></preview-link>
+                <preview-link :css="css" type="nsfw"></preview-link>
+              </preview>
 
-            <config title="UI Colors">
-              <color v-model="c_thumbnail">Thumbnail</color>
-              <color v-model="c_upvote">Upvote</color>
-              <color v-model="c_downvote">Downvote</color>
-              <color v-model="c_nsfw">NSFW</color>
-              <color v-model="c_locked">Locked</color>
-              <color v-model="c_stickied">Stickied</color>
-            </config>
+              <config title="UI Colors">
+                <color v-model="c_thumbnail">Thumbnail</color>
+                <color v-model="c_upvote">Upvote</color>
+                <color v-model="c_downvote">Downvote</color>
+                <color v-model="c_nsfw">NSFW</color>
+                <color v-model="c_locked">Locked</color>
+                <color v-model="c_stickied">Stickied</color>
+              </config>
 
-            <tab-button to="headerTab">Next Step: Header</tab-button>
-          </tab>
+              <step-button to="headerStep">Next Step: Header</step-button>
+            </step>
 
-          <tab name="headerTab" class="show active">
-            <config title="Navbar Options">
-              <toggle label="Static Navbar" v-model="o_static_nav">
-                Disables the fixed navbar.
-              </toggle>
-              <toggle label="Use Tabs" v-model="o_use_tabs">
-                Brings back the tabs for hot / new / top.
-              </toggle>
-            </config>
+            <step name="headerStep" class="show active">
+              <config title="Navbar Options">
+                <toggle label="Static Navbar" v-model="o_static_nav">
+                  Disables the fixed navbar.
+                </toggle>
+                <toggle label="Use Tabs" v-model="o_use_tabs">
+                  Brings back the tabs for hot / new / top.
+                </toggle>
+              </config>
 
-            <tab-button to="colorTab">Previous Step: Colors</tab-button>
-            <tab-button to="contentTab">Next Step: Content</tab-button>
-          </tab>
+              <step-button to="colorStep">Previous Step: Colors</step-button>
+              <step-button to="contentStep">Next Step: Content</step-button>
+            </step>
 
-          <tab name="contentTab">
-            <config title="Page Options">
-              <toggle label="Remove Margin" v-model="o_no_margin">
-                Disables the page margin around content/sidebar.
-              </toggle>
-            </config>
-            <config title="Content Options">
-              <string v-model="w_thumbnail">Thumbnail Width</string>
-              <string v-model="h_thumbnail">Thumbnail Height</string>
-              <div class="preview col-12 col-lg-3">
-                <div :style="[css.thumb.nail, css.thumb.link]"></div>
-                <small class="text-secondary">thumbnail</small>
-              </div>
-              <toggle label="Show NSFW" v-model="o_no_margin">
-                Doesn't obscure thumbnails on NSFW posts.
-              </toggle>
-            </config>
+            <step name="contentStep">
+              <config title="Page Options">
+                <toggle label="Remove Margin" v-model="o_no_margin">
+                  Disables the page margin around content/sidebar.
+                </toggle>
+              </config>
+              <config title="Content Options">
+                <string v-model="w_thumbnail">Thumbnail Width</string>
+                <string v-model="h_thumbnail">Thumbnail Height</string>
+                <div class="preview col-12 col-lg-3">
+                  <div :style="[css.thumb.nail, css.thumb.link]"></div>
+                  <small class="text-secondary">thumbnail</small>
+                </div>
+                <toggle label="Show NSFW" v-model="o_no_margin">
+                  Doesn't obscure thumbnails on NSFW posts.
+                </toggle>
+              </config>
 
-            <tab-button to="headerTab">Previous Step: Header</tab-button>
-            <tab-button to="sidebarTab">Next Step: Sidebar</tab-button>
-          </tab>
+              <step-button to="headerStep">Previous Step: Header</step-button>
+              <step-button to="sidebarStep">Next Step: Sidebar</step-button>
+            </step>
 
-          <tab name="sidebarTab">
-            <config title="Sidebar Options">
-              <toggle label="Sidebar Image" v-model="o_side_image">
-                Show an image at the top of the sidebar.
-              </toggle>
-              <string v-model="w_sidebar">Sidebar Width</string>
-              <string v-model="t_subscribers">Subscribers Text</string>
-              <string v-model="t_online">Online Text</string>
-            </config>
+            <step name="sidebarStep">
+              <config title="Sidebar Options">
+                <toggle label="Sidebar Image" v-model="o_side_image">
+                  Show an image at the top of the sidebar.
+                </toggle>
+                <string v-model="w_sidebar">Sidebar Width</string>
+                <string v-model="t_subscribers">Subscribers Text</string>
+                <string v-model="t_online">Online Text</string>
+              </config>
 
-            <tab-button to="contentTab">Previous Step: Content</tab-button>
-            <tab-button to="compileTab">Next Step: Compile</tab-button>
-          </tab>
+              <step-button to="contentStep">Previous Step: Content</step-button>
+              <step-button to="compileStep">Next Step: Compile</step-button>
+            </step>
 
-          <tab name="compileTab">
-            <h1>bloks: compile</h1>
-            <tab-button to="sidebarTab">Previous Step: Sidebar</tab-button>
-          </tab>
+            <step name="compileStep">
+              <h1>bloks: compile</h1>
+              <step-button to="sidebarStep">Previous Step: Sidebar</step-button>
+            </step>
+          </div>
 
         </div>
 
