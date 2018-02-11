@@ -41,12 +41,12 @@
 
           <!-- Navigation -->
           <div class="nav nav-pills flex-column" id="stepList" role="tablist">
-            <step-link to="welcomeStep" class="active">Welcome</step-link>
+            <step-link to="welcomeStep">Welcome</step-link>
             <step-link to="headerStep">Header</step-link>
             <step-link to="contentStep">Content</step-link>
             <step-link to="sidebarStep">Sidebar</step-link>
             <step-link to="colorStep">Colors</step-link>
-            <step-link to="previewStep">Preview</step-link>
+            <step-link to="previewStep" class="active">Preview</step-link>
             <step-link to="compileStep">Compile</step-link>
           </div>
         </div>
@@ -56,7 +56,7 @@
 
           <!-- Configuration Tab -->
           <div class="tab-content" id="stepContent">
-            <step name="welcomeStep" class="show active">
+            <step name="welcomeStep">
               <h1>bloks: engine.</h1>
 
               <p><strong><a href="https://reddit.com/r/bloks" target="_blank">r/bloks</a></strong> is a subreddit theme built for the new 2018 reddit redesign. It's built to be <strong>customizeable</strong> and <strong>modular</strong>, to allow you to set it up in any configuration you like.</p>
@@ -92,15 +92,15 @@
                 </toggle>
               </config>
               <config title="Content Options">
+                <toggle label="Show NSFW" v-model="o_show_nsfw">
+                  Makes NSFW Thumbnails visible.
+                </toggle>
                 <string v-model="w_thumbnail">Thumbnail Width</string>
                 <string v-model="h_thumbnail">Thumbnail Height</string>
                 <div class="preview col-12 col-lg-3">
                   <div :style="[css.thumb.nail, css.thumb.link]"></div>
                   <small class="text-secondary">thumbnail</small>
                 </div>
-                <toggle label="Show NSFW" v-model="o_no_margin">
-                  Doesn't obscure thumbnails on NSFW posts.
-                </toggle>
               </config>
 
               <step-button to="headerStep">Previous Step: Header</step-button>
@@ -149,7 +149,7 @@
               <step-button to="previewStep">Next Step: Preview</step-button>
             </step>
 
-            <step name="previewStep">
+            <step name="previewStep" class="show active">
               <h1>bloks: preview</h1>
               <step-button to="colorStep">Previous Step: Colors</step-button>
               <step-button to="compileStep">Next Step: Compile</step-button>
