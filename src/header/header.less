@@ -1,0 +1,50 @@
+/* bloks - header left */
+
+#header {
+	&:extend(.transparent-bg);
+	border-bottom-color: @c-border;
+}
+
+#header-bottom-left {
+	padding: 12px;
+
+	&:extend(.transparent-bg);
+}
+
+#header-img.default-header {
+	width: 14px;
+  height: 17px;
+  margin: -12px 4px 1px 3px;
+  background-size: 57px auto;
+  background-position: 0px -538px;
+}
+
+.pagename.redditname {
+	font-weight: normal;
+	font-size: @font-big;
+	font-variant: normal;
+	text-transform: lowercase;
+
+	a {
+		font-weight: bold;
+	}
+
+	&:before when (@o-sub-prefix) {
+		content: 'r/';
+		display: inline;
+		font-weight: bold;
+	}
+}
+
+#header-bottom-right {
+	top: 0;
+	padding: 0 12px;
+	line-height: 40px;
+	font-size: @font-small;
+
+	&:extend(.transparent-bg);
+
+	.beta-hint {
+		top: 14px;
+	}
+}

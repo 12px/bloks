@@ -7,7 +7,7 @@ Color.prototype = less.tree.Color.prototype;
 // color wrapper
 var _c = function(c) { return new Color(c.replace('#', '')); };
 
-// define methods
+// define LESS methods
 var LessMethods = {
 
   lightness: function(color) {
@@ -31,3 +31,20 @@ var LessMethods = {
   }
 
 };
+
+// define mixins
+var LessMixins = {
+  // move a brightness shade up/down based on current brightness
+  bump: function(color, weight) {
+    if (!weight) weight = '5';
+    if (this.lightness(color) < 50) return this.lighten(color, weight);
+    else return this.darken(color, weight);
+  },
+
+  // merge two colors together based on brightness of first color
+  fuse: function(color1, color2) {
+    if (!color2) color2 = this.c_text_base;
+    if (this.lightness(color1) < 50) return this.mix(color2, color1, 60);
+    else return this.mix(color2, color1, 40); 
+  }
+}

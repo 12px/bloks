@@ -1,13 +1,13 @@
 /* bloks engine: preview templates */
 
-// general preview wrapper
-Vue.component('preview', {
+// Header preview
+Vue.component('preview-header', {
   props: ['css'],
-  template: `<div class="preview card mb-3">
-    <div class="card-body" :style="css.background">
-      <div class="content" :style="[css.foreground, css.text_base]">
-        <slot></slot>
-      </div>
+  template: `<div>
+    <div class="preview-navbar" :style="css.navbar"><strong>r/bloks</strong></div>
+    <div class="preview-header" :style="css.header"></div>
+    <div class="preview-topnav" :style="css.topnav">
+      <strong class="mr-3">Posts</strong><span class="mr-3">Link 1</span><span>Link 2</span>
     </div>
   </div>`
 });
@@ -37,8 +37,29 @@ Vue.component('preview-link', {
   </div>`
 });
 
-// preview styles
+// pre-generated preview css
 var previewStyles = function() {
+  return {
+    navbar: {
+      color:           this.c_navbar_text,
+      backgroundColor: this.c_navbar_bg,
+      borderBottom:    '1px solid ' + this.bump(this.c_navbar_bg)
+    },
+    header: {
+      height:          this.h_header,
+      color:           this.c_header_text,
+      backgroundColor: this.c_header_bg
+    },
+    content: {
+      color:           this.c_text_base,
+      backgroundColor: this.c_background,
+      padding:         this.o_no_margin ? '0px' : this.w_margin
+    }
+  }
+};
+
+// preview styles
+var oldStyles = function() {
   return {
     background:   { backgroundColor:  this.c_background   },
     foreground:   { backgroundColor:  this.c_foreground   },
@@ -60,7 +81,6 @@ var previewStyles = function() {
       nsfw:      { backgroundColor:  this.mix(this.c_thumbnail, this.c_nsfw, 50)   },
       locked:    { backgroundColor:  this.mix(this.c_thumbnail, this.c_locked, 50) }
     },
-
     post: {
       link:      { color: this.c_link         },
       stickied:  { color: this.c_stickied     },

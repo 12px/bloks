@@ -49,6 +49,6 @@ Vue.component('string', {
       <input type="text" class="form-control form-control-sm"
         :value="value" @input="newVal($event.target.value)">
     </div>
-    <label class="label text-secondary"><slot></slot></label>
+    <div class="label text-center text-secondary pt-1"><slot></slot></div>
   </div>`
 });

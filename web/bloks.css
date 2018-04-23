@@ -1,26 +1,15 @@
 /* bloks engine styles */
 
+/* resets */
 #bloks { padding: 36px 0; }
-
-#preload {
-  z-index: 100;
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  padding-top: calc(33vh - 40px)
-}
-
-#preload .progress {
-  width: 400px;
-  margin: 0 auto;
-}
-
+#preload { padding-top: calc(33vh - 40px);
+  z-index: 100; position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0; }
+#preload .progress { width: 400px; margin: 0 auto; }
 #tabContent h1 { padding-bottom: 12px; }
+p { max-width: 35rem; font-family: inherit; }
 
-p {
-  max-width: 35rem;
-  font-family: inherit;
-}
-
+/* config */
 .conf .label {
   font-size: 13px;
   font-weight: bold;
@@ -47,14 +36,21 @@ p {
   width: 65px;
 }
 
-.preview .content { padding: 12px; }
-.preview .link .post,
-.preview .link .votes,
-.preview .link .thumbnail {
-  margin-right: 10px;
-  display: inline-block;
-  vertical-align: middle;
+/* preview */
+.preview-navbar {
+  height: 45px;
+  padding: 0 12px;
+  font-size: 16px;
+  line-height: 45px;
 }
-.preview .link .score { margin: -5px 0; }
-.preview .link .votes,
-.preview .link .subtitle { font-size: 0.8em; }
+.preview-header {
+  background-size: cover;
+  background-position: center center;
+  background-image: url('../build/header.jpg');
+}
+.preview-topnav {
+  height: 30px;
+  padding: 0 12px;
+  font-size: 14px;
+  line-height: 30px;
+}

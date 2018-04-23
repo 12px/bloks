@@ -90,6 +90,7 @@
                 <toggle label="Remove Margin" v-model="o_no_margin">
                   Disables the page margin around content/sidebar.
                 </toggle>
+                <string v-model="w_margin">Margin Width</string>
               </config>
               <config title="Content Options">
                 <toggle label="Show NSFW" v-model="o_show_nsfw">
@@ -97,10 +98,6 @@
                 </toggle>
                 <string v-model="w_thumbnail">Thumbnail Width</string>
                 <string v-model="h_thumbnail">Thumbnail Height</string>
-                <div class="preview col-12 col-lg-3">
-                  <div :style="[css.thumb.nail, css.thumb.link]"></div>
-                  <small class="text-secondary">thumbnail</small>
-                </div>
               </config>
 
               <step-button to="headerStep">Previous Step: Header</step-button>
@@ -129,13 +126,6 @@
                 <color v-model="c_link">Link</color>
               </config>
 
-              <preview :css="css">
-                <preview-link :css="css" type="stickied"></preview-link>
-                <preview-link :css="css"></preview-link>
-                <preview-link :css="css" type="locked"></preview-link>
-                <preview-link :css="css" type="nsfw"></preview-link>
-              </preview>
-
               <config title="UI Colors">
                 <color v-model="c_thumbnail">Thumbnail</color>
                 <color v-model="c_upvote">Upvote</color>
@@ -151,9 +141,13 @@
 
             <step name="previewStep" class="show active">
               <h1>bloks: preview</h1>
+
+              <div class="border preview my-3">
+                <preview-header :css="css"></preview-header>
+              </div>
+
               <step-button to="colorStep">Previous Step: Colors</step-button>
               <step-button to="compileStep">Next Step: Compile</step-button>
-            </step>
             </step>
 
             <step name="compileStep">

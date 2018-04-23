@@ -1,0 +1,69 @@
+/* bloks - structure */
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+}
+
+body {
+	color: @c-text-base;
+	font: 400 @font-base @font-family;
+
+	display: flex;
+	flex-flow: row wrap;
+	background: @c-background;
+
+	padding-top: 43px;
+}
+
+.side,
+.content {
+	margin: 0;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.content .content {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+// Layout
+#header {
+	top: 0;
+	left: 0;
+	right: 0;
+
+	order: 0;
+
+	& when (@o-static-nav) {
+		position: fixed;
+	}
+
+	& when not (@o-static-nav) {
+		position: absolute;
+	}
+}
+
+body > .content {
+	order: 1;
+	flex: 0 1 calc(~"100% - " @w-sidebar);
+}
+
+.side {
+	order: 2;
+	width: @w-sidebar;
+}
+
+.footer-parent {
+	order: 3;
+}
+
+#hsts_pixel,
+.debuginfo {
+  order: 4;
+}
