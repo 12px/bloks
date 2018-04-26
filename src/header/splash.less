@@ -6,11 +6,18 @@ body:before when (@o-splash) {
 
 	width: 100%;
 	height: @h-splash;
-	margin: 0 0 12px;
 
 	border-radius: @w-radius;
 	
 	background-image: url(%%header%%);
 	background-size: cover;
 	background-position: center center;
+
+	& when (@o-fixed-nav) {
+		margin: 8px 0 12px;
+	}
+
+	& when not (@o-fixed-nav) {
+		margin: 0 0 12px;
+	}
 }
