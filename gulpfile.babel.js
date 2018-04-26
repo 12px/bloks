@@ -7,11 +7,11 @@ import CleanCSS from 'gulp-clean-css';
 
 
 export function watcher() {
-	return watch('./src/**/*.less', compile);
+  return watch('./src/**/*.less', compile);
 };
 
 export function compile() {
-	return gulp.src( './src/bloks.less' )
+  return gulp.src( './src/bloks.less' )
     .pipe( less() )
     .pipe( CleanCSS({ compatibility: 'ie8' }) )
     .pipe( gulp.dest('./dist') );

@@ -1,12 +1,8 @@
 /* bloks - structure */
 
-* {
-	box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html, body {
-	margin: 0;
-}
+html, body { margin: 0; }
 
 body {
 	color: @c-text-base;
@@ -23,7 +19,6 @@ body {
 .content {
 	margin: 0;
   padding: 12px;
-  box-sizing: border-box;
 }
 
 .content .content {
@@ -40,13 +35,8 @@ body {
 
 	order: 0;
 
-	& when (@o-fixed-nav) {
-		position: fixed;
-	}
-
-	& when not (@o-fixed-nav) {
-		position: absolute;
-	}
+	& when     (@o-fixed-nav) { position: fixed; }
+	& when not (@o-fixed-nav) { position: absolute; }
 }
 
 body > .content {
@@ -67,11 +57,7 @@ body > .content {
 	background: @c-background;
 }
 
-.footer-parent {
-	order: 3;
-}
+.footer-parent { order: 3; }
 
 #hsts_pixel,
-.debuginfo {
-  order: 4;
-}
+.debuginfo { order: 4; }

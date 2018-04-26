@@ -1,25 +1,20 @@
 /* bloks - header left */
 
 #header {
-	background-color: @c-background;
+  background-color: @c-background;
 
-	& when (@o-fixed-nav) {
-		border-bottom-color: @c-border;
-	}
-
-	& when not (@o-fixed-nav) {
-		border-bottom-color: transparent;
-	}
+  & when     (@o-fixed-nav) { border-bottom-color: @c-border; }
+  & when not (@o-fixed-nav) { border-bottom-color: transparent; }
 }
 
 #header-bottom-left {
-	padding: 12px (12px + @w-margin);
+  padding: 12px (12px + @w-margin);
 
-	background-color: @c-background;
+  background-color: @c-background;
 }
 
 #header-img.default-header {
-	width: 14px;
+  width: 14px;
   height: 17px;
   margin: -12px 4px 1px 0;
   background-size: 57px auto;
@@ -27,39 +22,35 @@
 }
 
 .pagename.redditname {
-	font-weight: normal;
-	font-size: @font-big;
-	font-variant: normal;
-	text-transform: lowercase;
+  font-weight: normal;
+  font-size: @font-big;
+  font-variant: normal;
+  text-transform: lowercase;
 
-	a {
-		font-weight: bold;
-	}
+  a { font-weight: bold; }
 
-	&:before when (@o-sub-prefix) {
-		content: 'r/';
-		display: inline;
-		font-weight: bold;
-	}
+  &:before when (@o-sub-prefix) {
+    content: 'r/';
+    display: inline;
+    font-weight: bold;
+  }
 }
 
 #header-bottom-right {
-	top: 0;
-	padding: 0 (12px + @w-margin);
-	line-height: 40px;
-	font-size: @font-small;
+  top: 0;
+  padding: 0 (12px + @w-margin);
+  line-height: 40px;
+  font-size: @font-small;
 
-	background-color: @c-background;
+  background-color: @c-background;
 
-	&, a {
-		color: @c-text-subtle;
+  &, a {
+    color: @c-text-subtle;
 
-		&:hover {
-			color: @c-text-base;
-		}
-	}
+    &:hover {
+      color: @c-text-base;
+    }
+  }
 
-	.beta-hint {
-		top: 14px;
-	}
+  .beta-hint { top: 14px; }
 }

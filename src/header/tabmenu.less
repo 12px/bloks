@@ -14,11 +14,7 @@
     border: 1px solid @c-border;
 
     // hide unselected options unless hover
-    &:not(:hover) {
-      li:not(.selected) {
-        display: none;
-      }
-    }
+    &:not(:hover) li:not(.selected) { display: none; }
 
     a, li {
       display: block;
@@ -35,21 +31,18 @@
     }
 
     li:hover a,
-    li.selected a {
-      color: @c-accent;
-    }
+    li.selected a { color: @c-accent; }
   }
 }
 
 .tabmenu {
   margin: 0;
 
-  &, a, li {
-    display: inline-block;
-  }
+  &, a, li { display: inline-block; }
 
   li {
     margin: 0 1px;
+
     a {
       padding: 4px 5px 4px 7px;
       margin-bottom: -3px;
@@ -62,9 +55,7 @@
       font-size: @font-small;
     }
 
-    &:hover a {
-      border-color: @c-text-subtle;
-    }
+    &:hover a { border-color: @c-text-subtle; }
 
     &.selected a {
       color: @c-accent;

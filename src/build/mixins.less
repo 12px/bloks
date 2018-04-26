@@ -18,12 +18,12 @@
 
 // Dark Accent Color Text
 .palette() when (lightness(@c-accent) < 70%) {
-	@c-accent-text:  #ffffff;
+  @c-accent-text:  #ffffff;
 }
 
 // Dark Accent Color Text
 .palette() when (lightness(@c-accent) >= 70%) {
-	@c-accent-text:  #000000;
+  @c-accent-text:  #000000;
 }
 
 // Execute Palette
@@ -31,5 +31,5 @@
 
 // Box Shadow
 .drop-shadow(@color: @c-border) {
-	box-shadow: 0 0 10px @color;
+  box-shadow: 0 0 10px @color;
 }

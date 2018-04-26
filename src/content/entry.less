@@ -1,5 +1,96 @@
 /* bloks - entry */
 
+// layout
+.thing {
+  margin: 0 0 12px;
+  padding: 0 0 12px;
+
+  border-bottom: 1px dotted @c-border;
+  
+  display: flex;
+
+  position: relative;
+
+  .parent    { order: 0; }
+  .midcol    { order: 1; margin: 4px 8px 0 0; }
+  .thumbnail { order: 2; }
+  .entry     { order: 3; flex-grow: 1; }
+  .child     { order: 4; }
+
+  .rank {
+    margin: 0;
+    position: absolute;
+    top: 0px; right: 12px;
+
+    color: @c-border;
+  }
+
+  .score {
+    color: @c-text-subtle;
+
+    &.likes { color: @c-upvote; }
+    &.dislikes { color: @c-downvote; }
+  }
+
+  &, .rank { font-size: @font-base; }
+
+  &.last-clicked {
+    border-color: transparent transparent @c-border transparent;
+
+    .entry { border-right: 2px dotted @c-border; }
+  }
+}
+
+// voting
+.arrow {
+  margin: 0 auto;
+
+  line-height: 1.2;
+  text-align: center;
+  color: @c-text-subtle;
+  background-image: none !important;
+
+  &.up:before,
+  &.upmod:before { content: "▲"; }
+
+  &.down:before,
+  &.downmod:before { content: "▼"; }
+
+  &.upmod { color: @c-upvote; }
+
+  &.downmod { color: @c-downvote; }
+}
+
+// thumbnails
+.thing .thumbnail img {
+  min-height: @h-thumbnail;
+  width: auto !important;
+}
+
+// general thumbnail styles
+.thing .thumbnail {
+  margin: 0 12px 0 0;
+  width: @w-thumbnail;
+  height: @h-thumbnail !important;
+  border-radius: 3px;
+  text-align: center;
+  background-image: none;
+  background: @c-thumbnail;
+
+  &:after {
+    position: absolute;
+    display: block;
+    width: @w-thumbnail;
+    height: @h-thumbnail;
+    text-align: center;
+    font-weight: bold;
+    font-size: @font-small;
+    text-transform: uppercase;
+    line-height: @h-thumbnail;
+  }
+}
+
+
 // .thing {
 //   margin-bottom: 6px;
 //   padding: 12px 0;
@@ -183,49 +274,7 @@
 //   &:hover,&.expanded { border-color: mix(@c-locked, @c-text-base, 50%); }
 // }
 
-// // voting
-
-// .link .rank {
-//   color: @c-text-subtle;
-// }
-
-// .arrow {
-//   margin: 0 auto;
-//   background-image: none !important;
-//   color: @c-text-subtle;
-//   text-align: center;
-//   line-height: 1.2;
-
-//   &.up:before,
-//   &.upmod:before {
-//     content: "▲";
-//   }
-
-//   &.down:before,
-//   &.downmod:before {
-//     content: "▼";
-//   }
-// }
-
-// .link .score {
-//   color: @c-text-subtle;
-// }
-
-// .arrow.upmod,
-// .link .score.likes {
-//   color: @c-upvote;
-// }
-
-// .arrow.downmod,
-// .link .score.dislikes {
-//   color: @c-downvote;
-// }
-
 // // style mods
-
-// .link.last-clicked {
-//   border-color: transparent @c-accent transparent transparent;
-// }
 
 // .link .usertext-body .md {
 //   border-color: transparent transparent transparent @c-accent;
@@ -245,7 +294,7 @@
 }
 
 .entry.RES-keyNav-activeElement {
-  border-right: 1px solid @c-accent;
+  border-right: 2px solid @c-border;
 }
 
 // .res-show-link {
