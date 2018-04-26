@@ -1,0 +1,76 @@
+/* bloks - tabmenu */
+
+#header .tabmenu {
+  z-index: 105;
+  position: absolute;
+
+  & when (@o-use-tabs) {
+  	margin: -3px 0 0 12px;
+  }
+
+  & when not (@o-use-tabs) {
+		margin: -4px 0 0 12px !important;
+    background: @c-background;
+    border: 1px solid @c-border;
+
+    // hide unselected options unless hover
+    &:not(:hover) {
+      li:not(.selected) {
+        display: none;
+      }
+    }
+
+    a, li {
+      display: block;
+      margin: 0;
+      color: @c-text-subtle;
+    }
+
+    li a,
+    li.selected a {
+      width: 100%;
+      padding: 6px 12px;
+      border: 1px solid transparent;
+      border-bottom-color: @c-shadow;
+    }
+
+    li:hover a,
+    li.selected a {
+      color: @c-accent;
+    }
+  }
+}
+
+.tabmenu {
+  margin: 0;
+
+  &, a, li {
+    display: inline-block;
+  }
+
+  li {
+    margin: 0 1px;
+    a {
+      padding: 4px 5px 4px 7px;
+      margin-bottom: -3px;
+      color: @c-text-subtle;
+      background: transparent;
+      border: 1px solid transparent;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 400;
+      font-size: @font-small;
+    }
+
+    &:hover a {
+      border-color: @c-text-subtle;
+    }
+
+    &.selected a {
+      color: @c-accent;
+      border-color: @c-accent;
+      background-color: transparent;
+    }
+  }
+
+}

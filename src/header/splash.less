@@ -1,0 +1,16 @@
+/* bloks - splash section */
+
+body:before when (@o-splash) {
+	content: '';
+	display: block;
+
+	width: 100%;
+	height: @h-splash;
+	margin: 0 0 12px;
+
+	border-radius: @w-radius;
+	
+	background-image: url(%%header%%);
+	background-size: cover;
+	background-position: center center;
+}

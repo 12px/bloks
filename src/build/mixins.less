@@ -4,7 +4,7 @@
 .palette() when (lightness(@c-background) < 50%) {
   @c-shadow:        lighten(@c-background, 5%);
   @c-border:        lighten(@c-background, 8%);
-  @c-link-visited:  mix(@c-link, @c-background, 60%);
+  @c-link-visited:  mix(@c-accent, @c-background, 60%);
   @c-text-subtle:   mix(@c-text-base, @c-background, 60%);
 }
 
@@ -12,9 +12,24 @@
 .palette() when (lightness(@c-background) >= 50%) {
   @c-shadow:        darken(@c-background, 5%);
   @c-border:        darken(@c-background, 8%);
-  @c-link-visited:  mix(@c-link, @c-background, 40%);
+  @c-link-visited:  mix(@c-accent, @c-background, 40%);
   @c-text-subtle:   mix(@c-text-base, @c-background, 40%);
+}
+
+// Dark Accent Color Text
+.palette() when (lightness(@c-accent) < 70%) {
+	@c-accent-text:  #ffffff;
+}
+
+// Dark Accent Color Text
+.palette() when (lightness(@c-accent) >= 70%) {
+	@c-accent-text:  #000000;
 }
 
 // Execute Palette
 .palette();
+
+// Box Shadow
+.drop-shadow(@color: @c-border) {
+	box-shadow: 0 0 10px @color;
+}

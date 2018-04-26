@@ -1,0 +1,174 @@
+/* bloks - content */
+
+#preview-table table,
+#subreddit_stylesheet > div {
+  width: 100%;
+}
+
+.gray, h2 {
+  color: @c-text-subtle;
+}
+
+.error {
+  color: @c-nsfw;
+}
+
+.md a {
+  color: @c-accent;
+}
+
+// stickied
+.tagline .stickied-tagline,
+.thing.stickied.link a.title,
+.search-result-meta .stickied-tagline {
+  color: @c-stickied;
+}
+
+// locked
+.gold-accent {
+  border-color: @c-locked;
+  border-radius: 3px;
+  background-color: lighten(@c-locked, 90%);
+}
+
+// inline expand buttons
+.thing .md .expando-button {
+  position: relative;
+  margin: 0 4px;
+}
+
+// submit page
+.formtabs-content,
+.content > .tabpane-content {
+  padding-top: 12px;
+  border: 2px solid transparent;
+  border-top-color: @c-accent;
+}
+
+ul.tabmenu.formtab,
+.content > .tabmenu {
+  padding: 12px;
+
+  &:hover {
+    border: none;
+    background: transparent;
+  }
+
+  a {
+    border: none;
+    font-size: @font-base !important;
+  }
+}
+
+.submit_text.roundfield.enabled {
+  display: none;
+}
+
+ul.formtab li a:hover,
+.tabmenu.formtab .selected a,
+.content > .tabmenu li a:hover
+.content > .tabmenu .selected a {
+  color: @c-accent !important;
+  background-color: transparent;
+}
+
+.linefield,
+.roundfield {
+  padding: 10px;
+  border: 1px solid @c-border;
+  border-radius: 0px;
+  background-color: @c-shadow;
+}
+
+// misc pages
+
+pre {
+  padding: 3px 6px !important;
+  color: @c-text-base !important;
+  border: 1px solid @c-border;
+  display: inline-block !important;
+  background-color: @c-shadow !important;
+}
+
+.submit-page {
+
+  #reddit-field {
+    display: none;
+  }
+
+  #suggest-title {
+    margin-top: 6px;
+  }
+
+  #items-required {
+    font-size: 0;
+  }
+}
+
+.fancy-settings h1 {
+  margin: 12px 0;
+}
+
+.usertable {
+  margin: 0;
+}
+
+.flaircell,
+.flairlist .header {
+  margin-right: 0;
+}
+
+.content > .menuarea {
+  border: none;
+  border-radius: @w-radius;
+
+  color: @c-accent-text;
+  font-size: @font-small;
+  background: @c-accent;
+  text-transform: uppercase;
+
+  & when (@o-splash) {
+  	position: absolute;
+  	top: @h-splash;
+  }
+
+  & when not (@o-splash) {
+  	margin: 0 0 12px;
+  	display: inline-block;
+  }
+
+  .flat-list a,
+  .flat-list .selected a,
+  .dropdown.lightdrop .selected {
+    color: @c-accent-text;
+  }
+
+  .dropdown.lightdrop .selected {
+  	font-weight: 400;
+  	padding-right: 0;
+  }
+
+  .spacer {
+  	margin-right: 0;
+  }
+}
+
+.sheets .btn,
+.sheets label {
+  margin-top: 4px;
+  padding: 4px 8px;
+  font-size: @font-small;
+}
+
+#image-upload #file,
+#image-upload #sumbit-img {
+  margin: 10px 0;
+}
+
+#image-upload label input {
+  margin: 2px 5px;
+}
+
+ul.image-list {
+  font-size: @font-base;
+}

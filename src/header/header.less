@@ -1,20 +1,27 @@
 /* bloks - header left */
 
 #header {
-	&:extend(.transparent-bg);
-	border-bottom-color: @c-border;
+	background-color: @c-background;
+
+	& when (@o-fixed-nav) {
+		border-bottom-color: @c-border;
+	}
+
+	& when not (@o-fixed-nav) {
+		border-bottom-color: transparent;
+	}
 }
 
 #header-bottom-left {
-	padding: 12px;
+	padding: 12px (12px + @w-margin);
 
-	&:extend(.transparent-bg);
+	background-color: @c-background;
 }
 
 #header-img.default-header {
 	width: 14px;
   height: 17px;
-  margin: -12px 4px 1px 3px;
+  margin: -12px 4px 1px 0;
   background-size: 57px auto;
   background-position: 0px -538px;
 }
@@ -38,11 +45,19 @@
 
 #header-bottom-right {
 	top: 0;
-	padding: 0 12px;
+	padding: 0 (12px + @w-margin);
 	line-height: 40px;
 	font-size: @font-small;
 
-	&:extend(.transparent-bg);
+	background-color: @c-background;
+
+	&, a {
+		color: @c-text-subtle;
+
+		&:hover {
+			color: @c-text-base;
+		}
+	}
 
 	.beta-hint {
 		top: 14px;

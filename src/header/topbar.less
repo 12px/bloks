@@ -1,21 +1,40 @@
 /* bloks - top bar */
 
 #sr-header-area {
-	display: none;
-	
-	padding: 0 12px;
+	width: 100%;
+	padding: 0px 12px;
 
 	font-size: @font-smaller;
 	text-transform: uppercase;
 
-	background-color: @c-shadow;
-	border-bottom-color: @c-border;
+	position: absolute;
+	top: 43px; left: 0px;
+	z-index: 1;
+
+	border: none;
+
+	background: @c-accent;
+
+	transition: all 0.1s ease;
 
 	&, a {
-		color: @c-text-subtle;
+		color: @c-accent-text;
 	}
+}
 
-	a:hover {
-		color: @c-link;
-	}
+#header:not(:hover) #sr-header-area {
+	height: 0;
+}
+
+// RES Fix
+#RESShortcutsEditContainer,
+#RESShortcutsEditContainer .res-icon,
+#RESShortcutsSort,
+#RESShortcutsRight,
+#RESShortcutsLeft,
+#RESShortcutsAdd {
+	font-size: @font-small;
+
+	color: @c-accent-text;
+	background-color: @c-accent;
 }

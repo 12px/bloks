@@ -1,0 +1,282 @@
+/* bloks - entry */
+
+// .thing {
+//   margin-bottom: 6px;
+//   padding: 12px 0;
+//   position: relative;
+//   border-bottom: 1px solid @c-shadow;
+// }
+
+// // soften colors
+// .domain,
+// .tagline,
+// .domain a,
+// .search-result-meta,
+// .entry .buttons li a,
+// .redditSingleClick:after {
+//   font-size: @font-small;
+//   font-weight: 400;
+//   color: @c-text-subtle;
+// }
+
+// // un-soften on hover
+// .domain a:hover,
+// .entry .buttons li a:hover {
+//   color: @c-text-base;
+// }
+
+// // accent comments link
+// .entry .buttons li .comments {
+//   color: @c-accent;
+// }
+
+// // redesign infobar
+// // that "this is locked, archived" bar
+// .infobar,
+// .reddit-infobar {
+//   border: none;
+//   background-color: transparent;
+// }
+
+// .reddit-infobar {
+//   .md p {
+//     margin-top: -3px;
+//     padding-bottom: 5px;
+//     border-bottom: 2px solid @c-locked;
+//     color: darken(@c-locked, 60%);
+//     text-transform: uppercase;
+//     font-size: @font-base;
+//   }
+
+//   &.with-icon:before {
+//     width: 41px;
+//     height: 41px;
+//     border-radius: 100%;
+//     background-color: @c-locked;
+//   }
+// }
+
+// // title
+
+// .thing .title,
+// .thing .title:hover {
+//   font-size: 17px;
+//   color: @c-accent;
+//   margin-bottom: 6px;
+// }
+
+// .thing.visited .title,
+// .thing .title:visited,
+// .thing.visited .source-url {
+//   color: @c-link-visited;
+// }
+
+// // thumbnail
+// .thing .thumbnail img {
+//   min-height: @h-thumbnail;
+//   width: auto !important;
+// }
+
+// // general thumbnail styles
+// .thing .thumbnail {
+//   margin: 0 12px 0 0;
+//   width: @w-thumbnail;
+//   height: @h-thumbnail !important;
+//   border-radius: 3px;
+//   text-align: center;
+//   background-image: none;
+//   background: @c-thumbnail;
+
+//   &:after {
+//     position: absolute;
+//     display: block;
+//     width: @w-thumbnail;
+//     height: @h-thumbnail;
+//     text-align: center;
+//     font-weight: bold;
+//     font-size: @font-small;
+//     text-transform: uppercase;
+//     line-height: @h-thumbnail;
+//   }
+// }
+
+
+// // post types
+// .thing.self .thumbnail:after {
+//   content: "self";
+//   color: @c-text-subtle;
+// }
+
+// .thing.locked .thumbnail:after {
+//   content: "locked";
+//   color: mix(@c-locked, @c-text-base, 50%);
+//   background-color: mix(@c-locked, @c-thumbnail, 50%);
+// }
+
+// .thing.over18 .thumbnail:after {
+//   content: "nsfw";
+//   color: mix(@c-nsfw, @c-text-base, 50%);
+//   background-color: mix(@c-nsfw, @c-thumbnail, 50%);
+// }
+
+// .thing.locked .thumbnail img {
+//   opacity: 0.5;
+// }
+
+// .thing.over18 .thumbnail img {
+//   display: none;
+// }
+
+// .nsfw-stamp {
+//   color: @c-nsfw;
+//   margin: 3px -3px 0 0;
+// }
+
+// // expand buttons
+// .thing .expando-button {
+//   width: 20px;
+//   height: 20px;
+//   border: 2px solid @c-background;
+//   border-radius: 16px;
+//   color: @c-text-subtle;
+//   background: @c-thumbnail;
+//   background-image: none !important;
+//   text-align: center;
+//   font-weight: 700;
+//   font-size: @font-base;
+//   line-height: 18px;
+
+//   &:hover,
+//   &.expanded {
+//     border-color: mix(@c-accent, @c-thumbnail, 80%);
+//   }
+
+//   &:before {
+//     background-image: none !important;
+//   }
+
+//   &.expanded:before {
+//     content: "-" !important;
+//   }
+
+//   &:not(.expanded):before {
+//     content: "+" !important;
+//   }
+// }
+
+// // Position for top-level expands
+// .thing .thumbnail + .entry .top-matter .expando-button {
+//   position: absolute;
+//   top: @h-thumbnail - 10px;
+//   margin-left: -28px;
+// }
+
+// // Styles for top-level expands
+// .thing.over18 .thumbnail + .entry .top-matter .expando-button {
+//   color: mix(@c-nsfw, @c-text-base, 50%);
+//   background-color: mix(@c-nsfw, @c-thumbnail, 50%);
+//   &:hover,&.expanded { border-color: mix(@c-nsfw, @c-text-base, 50%); }
+// }
+// .thing.locked .thumbnail + .entry .top-matter .expando-button {
+//   color: mix(@c-locked, @c-text-base, 50%);
+//   background-color: mix(@c-locked, @c-thumbnail, 50%);
+//   &:hover,&.expanded { border-color: mix(@c-locked, @c-text-base, 50%); }
+// }
+
+// // voting
+
+// .link .rank {
+//   color: @c-text-subtle;
+// }
+
+// .arrow {
+//   margin: 0 auto;
+//   background-image: none !important;
+//   color: @c-text-subtle;
+//   text-align: center;
+//   line-height: 1.2;
+
+//   &.up:before,
+//   &.upmod:before {
+//     content: "▲";
+//   }
+
+//   &.down:before,
+//   &.downmod:before {
+//     content: "▼";
+//   }
+// }
+
+// .link .score {
+//   color: @c-text-subtle;
+// }
+
+// .arrow.upmod,
+// .link .score.likes {
+//   color: @c-upvote;
+// }
+
+// .arrow.downmod,
+// .link .score.dislikes {
+//   color: @c-downvote;
+// }
+
+// // style mods
+
+// .link.last-clicked {
+//   border-color: transparent @c-accent transparent transparent;
+// }
+
+// .link .usertext-body .md {
+//   border-color: transparent transparent transparent @c-accent;
+//   border-radius: 0;
+//   background-color: @c-background !important;
+// }
+
+// res fixes
+
+.res .entry.res-selected,
+.res .entry.res-selected .md-container,
+.res .commentarea .RES-keyNav-activeElement.entry .noncollapsed,
+.res .commentarea .RES-keyNav-activeElement .md,
+.res .RES-keyNav-activeElement,
+.res .RES-keyNav-activeElement .md-container {
+  background-color: transparent !important;
+}
+
+.entry.RES-keyNav-activeElement {
+  border-right: 1px solid @c-accent;
+}
+
+// .res-show-link {
+//   top: auto !important;
+//   bottom: 0;
+// }
+
+// .res-userHighlight .tagline .author.submitter, .res-userHighlight .crosspost-preview-tagline .author.submitter {
+//   color: @c-background !important;
+//   background-color: @c-accent !important;
+// }
+
+// .RESHoverTitle .fancy-toggle-button {
+//   margin: 0;
+//   padding: 0;
+//   width: auto;
+// }
+
+// .res-userHighlight .entry .tagline .author.moderator {
+//   padding: 0 2px;
+//   color: @c-background !important;
+//   background-color: @c-stickied !important;
+// }
+
+// .NERPageMarker,
+// #progressIndicator.neverEndingReddit {
+//   color: @c-text-subtle;
+//   background: @c-shadow;
+//   border-color: @c-border;
+
+//   .gearIcon {
+//     opacity: 0.3;
+//   }
+// }

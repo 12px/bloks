@@ -14,9 +14,9 @@ body {
 
 	display: flex;
 	flex-flow: row wrap;
-	background: @c-background;
+	padding: 43px @w-margin 0;
 
-	padding-top: 43px;
+	background: @c-background;
 }
 
 .side,
@@ -40,11 +40,11 @@ body {
 
 	order: 0;
 
-	& when (@o-static-nav) {
+	& when (@o-fixed-nav) {
 		position: fixed;
 	}
 
-	& when not (@o-static-nav) {
+	& when not (@o-fixed-nav) {
 		position: absolute;
 	}
 }
@@ -52,11 +52,19 @@ body {
 body > .content {
 	order: 1;
 	flex: 0 1 calc(~"100% - " @w-sidebar);
+
+  background: @c-foreground;
+  border-radius: @w-radius;
+  border: 1px solid @c-shadow;
 }
 
 .side {
 	order: 2;
 	width: @w-sidebar;
+
+	font-size: @font-small;
+
+	background: @c-background;
 }
 
 .footer-parent {
