@@ -78,6 +78,7 @@
   background: @c-thumbnail;
 
   &:after {
+    top: 0;
     position: absolute;
     display: block;
     width: @w-thumbnail;
@@ -89,6 +90,29 @@
     line-height: @h-thumbnail;
   }
 }
+
+// thumbnail types
+.thing.self .thumbnail:after {
+  content: 'self';
+  .thumb-style();
+}
+
+.thing.stickied .thumbnail:after {
+  .thumb-style(@c-stickied);
+}
+
+.thing.locked .thumbnail:after {
+  opacity: 0.75;
+  content: 'locked';
+  .thumb-style(@c-locked);
+}
+
+.thing.over18 .thumbnail:after {
+  content: 'nsfw';
+  .thumb-style(@c-nsfw);
+}
+
+.thing.over18 .thumbnail img { display: none; }
 
 
 // .thing {
@@ -192,31 +216,6 @@
 // }
 
 
-// // post types
-// .thing.self .thumbnail:after {
-//   content: "self";
-//   color: @c-text-subtle;
-// }
-
-// .thing.locked .thumbnail:after {
-//   content: "locked";
-//   color: mix(@c-locked, @c-text-base, 50%);
-//   background-color: mix(@c-locked, @c-thumbnail, 50%);
-// }
-
-// .thing.over18 .thumbnail:after {
-//   content: "nsfw";
-//   color: mix(@c-nsfw, @c-text-base, 50%);
-//   background-color: mix(@c-nsfw, @c-thumbnail, 50%);
-// }
-
-// .thing.locked .thumbnail img {
-//   opacity: 0.5;
-// }
-
-// .thing.over18 .thumbnail img {
-//   display: none;
-// }
 
 // .nsfw-stamp {
 //   color: @c-nsfw;
