@@ -107,12 +107,12 @@
   .thumb-style(@c-locked);
 }
 
-.thing.over18 .thumbnail:after {
+.thing.over18 .thumbnail:after when not (@o-show-nsfw) {
   content: 'nsfw';
   .thumb-style(@c-nsfw);
 }
 
-.thing.over18 .thumbnail img { display: none; }
+.thing.over18 .thumbnail img when not (@o-show-nsfw) { display: none; }
 
 
 // .thing {
