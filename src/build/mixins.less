@@ -34,3 +34,10 @@
 .thumb-style(@color: @c-thumbnail) when not (@color = @c-thumbnail) {
   background-color: mix(@color, @c-thumbnail, 50%);
 }
+
+// Generate Expand Styles
+.expand-style(@color: @c-thumbnail) {
+  color: mix(@color, @c-text-base, 50%);
+  background-color: mix(@color, @c-thumbnail, 50%);
+  &:hover,&.expanded { border-color: mix(@color, @c-text-base, 50%); } 
+}

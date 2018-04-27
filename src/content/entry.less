@@ -13,7 +13,7 @@
 
   .parent    { order: 0; }
   .midcol    { order: 1; margin: 4px 8px 0 0; }
-  .thumbnail { order: 2; }
+  .thumbnail { order: 2; flex-shrink: 0; }
   .entry     { order: 3; flex-grow: 1; }
   .child     { order: 4; }
 
@@ -61,12 +61,6 @@
   &.downmod { color: @c-downvote; }
 }
 
-// thumbnails
-.thing .thumbnail img {
-  min-height: @h-thumbnail;
-  width: auto !important;
-}
-
 // general thumbnail styles
 .thing .thumbnail {
   margin: 0 12px 0 0;
@@ -89,6 +83,11 @@
     text-transform: uppercase;
     line-height: @h-thumbnail;
   }
+
+  img {
+    min-height: @h-thumbnail;
+    width: auto !important;
+  }
 }
 
 // thumbnail types
@@ -97,9 +96,7 @@
   .thumb-style();
 }
 
-.thing.stickied .thumbnail:after {
-  .thumb-style(@c-stickied);
-}
+.thing.stickied .thumbnail:after { .thumb-style(@c-stickied); }
 
 .thing.locked .thumbnail:after {
   opacity: 0.75;
@@ -114,13 +111,57 @@
 
 .thing.over18 .thumbnail img when not (@o-show-nsfw) { display: none; }
 
+// expand buttons
+.thing .expando-button {
+  width: 20px;
+  height: 20px;
+  border: 2px solid @c-foreground;
+  border-radius: 16px;
+  color: @c-text-subtle;
+  background: @c-thumbnail;
+  background-image: none !important;
+  text-align: center;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 14px;
 
-// .thing {
-//   margin-bottom: 6px;
-//   padding: 12px 0;
-//   position: relative;
-//   border-bottom: 1px solid @c-shadow;
-// }
+  &:hover,
+  &.expanded {
+    border-color: mix(@c-accent, @c-thumbnail, 80%);
+  }
+
+  &:before {
+    background-image: none !important;
+  }
+
+  &.expanded:before {
+    content: "-" !important;
+  }
+
+  &:not(.expanded):before {
+    content: "+" !important;
+  }
+}
+
+// Position for top-level expands
+.thing .thumbnail + .entry .top-matter .expando-button {
+  @expand-pos-top: @h-thumbnail - 15px;
+
+  position: absolute;
+  margin-left: -27px;
+  top: @expand-pos-top;
+}
+
+// Styles for top-level expands
+.thing.over18 > .thumbnail + .entry .top-matter .expando-button {
+  .expand-style(@c-nsfw);
+}
+.thing.locked > .thumbnail + .entry .top-matter .expando-button {
+  .expand-style(@c-locked);
+}
+
+// RES Expand
+.res-expando-box { margin-top: 12px; }
 
 // // soften colors
 // .domain,
@@ -186,91 +227,10 @@
 //   color: @c-link-visited;
 // }
 
-// // thumbnail
-// .thing .thumbnail img {
-//   min-height: @h-thumbnail;
-//   width: auto !important;
-// }
-
-// // general thumbnail styles
-// .thing .thumbnail {
-//   margin: 0 12px 0 0;
-//   width: @w-thumbnail;
-//   height: @h-thumbnail !important;
-//   border-radius: 3px;
-//   text-align: center;
-//   background-image: none;
-//   background: @c-thumbnail;
-
-//   &:after {
-//     position: absolute;
-//     display: block;
-//     width: @w-thumbnail;
-//     height: @h-thumbnail;
-//     text-align: center;
-//     font-weight: bold;
-//     font-size: @font-small;
-//     text-transform: uppercase;
-//     line-height: @h-thumbnail;
-//   }
-// }
-
-
 
 // .nsfw-stamp {
 //   color: @c-nsfw;
 //   margin: 3px -3px 0 0;
-// }
-
-// // expand buttons
-// .thing .expando-button {
-//   width: 20px;
-//   height: 20px;
-//   border: 2px solid @c-background;
-//   border-radius: 16px;
-//   color: @c-text-subtle;
-//   background: @c-thumbnail;
-//   background-image: none !important;
-//   text-align: center;
-//   font-weight: 700;
-//   font-size: @font-base;
-//   line-height: 18px;
-
-//   &:hover,
-//   &.expanded {
-//     border-color: mix(@c-accent, @c-thumbnail, 80%);
-//   }
-
-//   &:before {
-//     background-image: none !important;
-//   }
-
-//   &.expanded:before {
-//     content: "-" !important;
-//   }
-
-//   &:not(.expanded):before {
-//     content: "+" !important;
-//   }
-// }
-
-// // Position for top-level expands
-// .thing .thumbnail + .entry .top-matter .expando-button {
-//   position: absolute;
-//   top: @h-thumbnail - 10px;
-//   margin-left: -28px;
-// }
-
-// // Styles for top-level expands
-// .thing.over18 .thumbnail + .entry .top-matter .expando-button {
-//   color: mix(@c-nsfw, @c-text-base, 50%);
-//   background-color: mix(@c-nsfw, @c-thumbnail, 50%);
-//   &:hover,&.expanded { border-color: mix(@c-nsfw, @c-text-base, 50%); }
-// }
-// .thing.locked .thumbnail + .entry .top-matter .expando-button {
-//   color: mix(@c-locked, @c-text-base, 50%);
-//   background-color: mix(@c-locked, @c-thumbnail, 50%);
-//   &:hover,&.expanded { border-color: mix(@c-locked, @c-text-base, 50%); }
 // }
 
 // // style mods
