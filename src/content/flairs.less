@@ -1,0 +1,55 @@
+/* bloks - flairs */
+
+
+// link flairs
+
+.flair,
+.linkflairlabel {
+  padding: 2px 4px;
+  font-weight: bold;
+  font-size: @font-small;
+  border-radius: @w-radius;
+  border-color: @c-foreground;
+  background-color: @c-accent;
+  color: @c-foreground;
+  margin-top: -1px;
+  vertical-align: bottom;
+}
+
+.linkflair-red .linkflairlabel {
+  background-color: @c-red;
+}
+
+.linkflair-green .linkflairlabel {
+  background-color: @c-green;
+}
+
+.linkflair-blue .linkflairlabel {
+  background-color: @c-blue;
+}
+
+// fade flairs unless hover
+.thing:not(.stickied):not(:hover) .linkflairlabel {
+  opacity: 0.5;
+}
+
+// // user flairs
+
+// .tagline .flair {
+//   margin-bottom: -3px;
+//   vertical-align: bottom;
+// }
+
+
+// // flair selector
+// .flairselector.drop-choices.active {
+//   box-shadow: none;
+//   padding: 12px 4px !important;
+//   border: 1px solid @c-border;
+
+//   h2 {
+//     color: @c-text;
+//     margin-bottom: 4px;
+//     background: transparent;
+//   }
+// }
