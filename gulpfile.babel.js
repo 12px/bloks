@@ -6,7 +6,9 @@ import watch from 'gulp-watch';
 import CleanCSS from 'gulp-clean-css';
 
 function swallow(e) {
-  console.log(e);
+  let d = new Date();
+  let time = [ d.getHours(), d.getMinutes(), d.getSeconds() ];
+  console.log(time.join(':') + ' > ' + e.message);
   this.emit('end');
 };
 
