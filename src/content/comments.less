@@ -22,10 +22,12 @@
 }
 
 .gold-accent.comment-visits-box {
+  opacity: 0.75;
   border-width: 0;
   margin: 0 10px 24px;
   .thumb-style(@c-locked);
 }
+
 
 // res fixes
 .res-commentBoxes body > .content {
@@ -33,45 +35,44 @@
 }
 
 
-// comments
-.comment {
-  padding: 12px;
-   .md {
-    color: @c-text-base;
-  }
-  .child {
-    border-left-color: @c-border;
-  }
+// comment
+.commentarea .comment {
+  padding: 12px !important;
+  display: block !important;
+
+  .md { color: @c-text-base; }
 }
 
 
-// .morecomments a,
-// .tagline .submitter,
-// .dropdown.lightdrop .selected,
-// .search-result-meta .submitter {
-//   color: @c-link;
-// }
+.morecomments a,
+.tagline .submitter,
+.dropdown.lightdrop .selected,
+.search-result-meta .submitter {
+  color: @c-accent;
+}
 
-// .morecomments .gray {
-//   color: @c-text-subtle;
-// }
+.morecomments .gray {
+  color: @c-text-subtle;
+}
 
+// comment styles
 
+.commentarea .new-comment {
 
-// .new-comment {
+  border-color: @c-accent !important;
 
-//   .usertext-body {
-//     border-color: transparent;
-//     background-color: transparent;
-//   }
+  .usertext-body {
+    border-color: transparent;
+    background-color: transparent;
+  }
 
-//   .tagline:after {
-//     display: inline-block;
-//     color: @c-link;
-//     content: "new comment";
-//   }
-// }
+  .tagline:after {
+    color: @c-accent;
+    display: inline-block;
+    content: "new comment";
+  }
+}
 
-// .thing.comment.stickied {
-//   border-left: 3px solid @c-stickied !important;
-// }
+.thing.comment.stickied {
+  border-left: 3px solid @c-stickied !important;
+}
