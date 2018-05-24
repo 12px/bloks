@@ -204,39 +204,42 @@
 // accent comments link
 .entry .buttons li .comments { color: @c-accent; }
 
-// // redesign infobar
-// // that "this is locked, archived" bar
-// .infobar,
-// .reddit-infobar {
-//   border: none;
-//   background-color: transparent;
-// }
+// redesign infobar
+// that "this is locked, archived" bar
+.infobar,
+.reddit-infobar {
+  border: none;
+  background-color: transparent;
+}
 
-// .reddit-infobar {
-//   .md p {
-//     margin-top: -3px;
-//     padding-bottom: 5px;
-//     border-bottom: 2px solid @c-locked;
-//     color: darken(@c-locked, 60%);
-//     text-transform: uppercase;
-//     font-size: @font-base;
-//   }
+.reddit-infobar {
+  margin: 10px 0 20px;
+  
+  .md p {
+    margin-top: -3px;
+    padding: 0 8px 5px;
+    border-bottom: 2px solid @c-locked;
+    color: darken(@c-locked, 60%);
+    text-transform: uppercase;
+    font-size: @font-small;
+  }
 
-//   &.with-icon:before {
-//     width: 41px;
-//     height: 41px;
-//     border-radius: 100%;
-//     background-color: @c-locked;
-//   }
-// }
+  &.with-icon:before {
+    left: 9px;
+    width: 41px;
+    height: 41px;
+    border-radius: 100%;
+    background-color: @c-locked;
+  }
+}
 
-// // style mods
-
-// .link .usertext-body .md {
-//   border-color: transparent transparent transparent @c-accent;
-//   border-radius: 0;
-//   background-color: @c-background !important;
-// }
+// expandable usertext
+.link .usertext-body .md {
+  padding: 12px;
+  border-color: transparent transparent transparent @c-accent;
+  border-radius: 0;
+  background-color: @c-foreground !important;
+}
 
 // res fixes
 
