@@ -1,15 +1,21 @@
 'use strict';
 
+import log from 'fancy-log';
 import gulp from 'gulp';
 import less from 'gulp-less';
 import watch from 'gulp-watch';
 import CleanCSS from 'gulp-clean-css';
 
-function swallow(e) {
-  let d = new Date();
-  let time = [ d.getHours(), d.getMinutes(), d.getSeconds() ];
-  console.log(time.join(':') + ' > ' + e.message);
+let error = false;
+
+function eat(e) {
+  error = e.message;
   this.emit('end');
+};
+
+function say() {
+  log(error ? error : 'Compiled');
+  if (error) error = false;
 };
 
 export function watcher() {
@@ -19,9 +25,10 @@ export function watcher() {
 export function compile() {
   return gulp.src( './src/bloks.less' )
     .pipe( less() )
-    .on( 'error', swallow )
+    .on( 'error', eat )
     .pipe( CleanCSS({ compatibility: 'ie8' }) )
-    .pipe( gulp.dest('./dist') );
+    .pipe( gulp.dest('./dist') )
+    .on( 'end', say);
 };
 
 const inDev = gulp.series(compile, watcher);
