@@ -67,3 +67,22 @@ hr, .md hr {
   color: @c-border;
   height: 1px;
 }
+
+// inputs
+
+a { color: @c-accent; }
+
+textarea,
+input[type=text],
+input[type=password] {
+  padding: 6px 12px !important;
+  border-radius: @w-radius;
+  border: 1px solid @c-border !important;
+  background: @c-foreground !important;
+  color: @c-text-base !important;
+
+  &:focus {
+    outline: none;
+    border-color: @c-accent !important;
+  }
+}

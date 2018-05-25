@@ -1,0 +1,51 @@
+/* bloks - extend */
+
+// buttons
+.x-btn { 
+  font-weight: 400;
+  padding: 6px 12px;
+  background: @c-btn-bg;
+  letter-spacing: 0.1em;
+  font-size: @font-small;
+  text-transform: uppercase;
+  border: 1px solid @c-btn-bg;
+  color: @c-btn-text !important;
+
+  &:hover { opacity: 0.8; }
+}
+
+.x-btn-o {
+  &:extend(.x-btn);
+  color: @c-btn-bg !important;
+  background: transparent !important;
+  border: 1px solid @c-btn-bg !important;
+}
+
+.btn, button, 
+[href^="#btn"] + a,
+[href^="#btn"] + span + a,
+.res-fancy-toggle-button,
+.fancy-toggle-button .option,
+.fancy-toggle-button .option.active { &:extend(.x-btn); }
+
+[href^="#obtn"] + a,
+[href^="#obtn"] + span + a { &:extend(.x-btn-o); }
+
+
+
+// custom button support
+.content [href^="#btn"] + a,
+.content [href^="#obtn"] + a,
+.content [href^="#btn"] + span + a,
+.content [href^="#obtn"] + span + a { display: inline-block; }
+
+// full width button support
+.content [href^="#btn"]:not([href$="-f"]) + a,
+.content [href^="#obtn"]:not([href$="-f"]) + a,
+.content [href^="#btn"]:not([href$="-f"]) + span + a,
+.content [href^="#obtn"]:not([href$="-f"]) + span + a { margin: 0 10px; }
+
+.content [href="#btn-f"] + a,
+.content [href="#obtn-f"] + a,
+.content [href="#btn-f"] + span + a,
+.content [href="#obtn-f"] + span + a { margin: 10px 0; }

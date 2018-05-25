@@ -11,9 +11,6 @@
 
 #search {
   input[type=text] {
-    border-color: @c-border;
-    border-radius: @w-radius;
-    background-color: @c-foreground;
 
     &::placeholder {
       color: @c-text-subtle;
@@ -32,10 +29,14 @@ form.leavecontributor-button { display: none !important; }
 
 // submit styles
 // text can be changed in reddit settings
-.morelink { font-size: @font-base; }
+.morelink { 
+  border: none;
+  background-image: none;
+  font-size: @font-base; 
+}
+
 .submit-link .morelink,
 .submit-text .morelink {
-  border: none;
   margin-bottom: 6px;
   background: transparent;
 }
