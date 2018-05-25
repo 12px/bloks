@@ -39,6 +39,10 @@
 
     .entry { border-right: 2px dotted @c-border; }
   }
+
+  // unfade items on hover
+  &:hover * { opacity: 1 !important; }
+  &:hover a.title { color: @c-accent; }
 }
 
 // voting
@@ -199,6 +203,7 @@
 .domain a:hover,
 .entry .buttons li a:hover {
   color: @c-text-base;
+  text-decoration: none;
 }
 
 // accent comments link
