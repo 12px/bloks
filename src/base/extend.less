@@ -1,9 +1,13 @@
 /* bloks - extend */
 
+// utilities
+.x-hide { display: none !important; }
+
 // buttons
 .x-btn { 
   font-weight: 400;
   padding: 6px 12px;
+  text-align: center;
   background: @c-btn-bg;
   letter-spacing: 0.1em;
   font-size: @font-smaller !important;
@@ -28,10 +32,7 @@
 
 .btn, button, 
 [href^="#btn"] + a,
-[href^="#btn"] + span + a,
-.res-fancy-toggle-button,
-.fancy-toggle-button .option,
-.fancy-toggle-button .option.active { &:extend(.x-btn all); }
+[href^="#btn"] + span + a { &:extend(.x-btn all); }
 
 [href^="#obtn"] + a,
 [href^="#obtn"] + span + a { &:extend(.x-btn-o all); }
