@@ -50,6 +50,14 @@ form.leavecontributor-button { display: none !important; }
   }
 }
 
+.disabled .morelink {
+  padding: 8px 0;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: @c-border !important;
+}
+
 // reddit name
 .titlebox {
   .redditname {
@@ -69,23 +77,29 @@ form.leavecontributor-button { display: none !important; }
 }
 
 // subscribe button
+.titlebox .subscribe-button  {
+  width: 100%;
+  margin-right: 0;
+  .active { 
+    width: 100%;
+    text-align: center;
+    line-height: initial;
+    display: inline-block;
+
+    &:extend(.x-btn all); 
+  }
+}
+
+// fix for no RES
+.titlebox > .subscribe-button {
+  margin-top: 8px;
+}
+
+// subscribe with RES
 .titlebox .subButtons {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  .subscribe-button  {
-    width: 100%;
-    margin-right: 0;
-    .active { 
-      width: 100%;
-      text-align: center;
-      line-height: initial;
-      display: inline-block;
-
-      &:extend(.x-btn all); 
-    }
-  }
 
   // dashboard, shortcut
   .res-fancy-toggle-button {
