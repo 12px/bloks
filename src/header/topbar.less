@@ -13,14 +13,22 @@
 
   border: none;
 
-  background: @c-accent;
-
   transition: all 0.1s ease;
 
-  &, a { color: @c-accent-text; }
+  &, #sr-more-link { background: @c-accent;  }
+  &, a, .srdrop .selected { color: @c-accent-text; }
+
+  .srdrop .selected {
+    margin: 0;
+    padding-right: 12px;
+    background-image: none;
+  }
 }
 
-#header:not(:hover) #sr-header-area { height: 0; }
+#header:not(:hover) #sr-header-area { 
+  height: 0; 
+  overflow: hidden;
+}
 
 // RES Fix
 #RESShortcutsEditContainer,
